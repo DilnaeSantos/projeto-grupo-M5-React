@@ -12,7 +12,7 @@ const Rotas = () => {
       <GlobalStyle />
       <Routes>
         <Route path="/login" element={<Login />} />
-        <Route path="/" element={<Cadastro />} />
+        <Route path="/cadastro" element={<Cadastro />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
