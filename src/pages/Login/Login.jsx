@@ -28,7 +28,7 @@ const Login = () => {
           />
           <p>
             Ainda não tem conta?
-            <Link to="/" className="destaque">
+            <Link to="/cadastro" className="destaque">
               Cadastre-se
             </Link>
           </p>
