@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import ProdutosRepository from "../../../../projeto-grupo-M5-API/src/Repository/ProdutoRepository";
 
@@ -18,6 +17,21 @@ const Produtos = () => {
     fetchProdutos(); // Chama a função para buscar os produtos quando o componente é montado
   }, []); // O array vazio como segundo argumento faz com que o useEffect seja executado apenas uma vez após a montagem do componente
 
-
+  return (
+    <div className="produtos-container">
+      <h1>Produtos Disponíveis</h1>
+      <ul>
+        {produtos.map((produto) => (
+          <li key={produto.id}>
+            <img src={produto.imagemUrl} alt={produto.descricao} />
+            <h2>{produto.nome}</h2>
+            <p>{produto.descricao}</p>
+            <p>Quantidade: {produto.quantidade}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
 export default Produtos;
