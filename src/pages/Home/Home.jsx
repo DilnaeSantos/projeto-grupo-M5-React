@@ -12,11 +12,14 @@ const Home = () => {
 
       <main>
           <h2>Bem vindo a Diversiart
-              <p>E nosso objetivo com o diversiArt é promover autenticidade, qualidade e inclusão dos produtos oferecidos por artesãos e empreendedores de grupos minorizados no marketplace DiversiArt.</p>
+              <p>autenticidade, qualidade e inclusão de artesãos</p>
               <img className='artesanato' src={ArtesanatoImg} />
           </h2>
-          <h2>Faça seu cadastro agora mesmo!
-              <p>Todos os vendedores que desejam se registrar no DiversiArt podem acessar a nossa aba "Cadastro" e cadastrar todas as artes.</p>
+          <h2>Conheça um pouco sobre o DiversiArt
+              <p>O DiversiArt Garante a autenticidade e qualidade dos produtos vendidos no marketplace, construindo a confiança dos clientes.
+                Promove a inclusão  e a representatividade de grupos minorizados, alinhando-se com a missão do DiversiArt e também,
+                  ajuda a manter um ambiente seguro e ético para compradores e vendedores.
+                  </p>
               <img className='artesa' src={ArtesaImg} />
           </h2>
       </main>

@@ -94,24 +94,29 @@ export const HomeStyle = createGlobalStyle`
   h2 {
     color: #8a4546;
     text-align: center;
+    
       
   }
 
   p {
     text-align: center;
+    margin-top: 20px;
 }
 
   .artesanato {
     display: block; 
     margin: 0 auto 20px;
-
-    
+    border-radius: 30%;
+    height: 200px;
+    margin-top: 20px;
   }
   
   .artesa {
     display: block; 
     margin: 0 auto 20px; 
-
+    border-radius: 30%;
+    height: 200px;
+    margin-top: 20px;
   }
 
 }
