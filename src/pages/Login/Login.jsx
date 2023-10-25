@@ -6,10 +6,9 @@ import { StyleContainerLogin } from './login.styles';
 import Button from '../../components/common/Button/Button';
 import diversiartImg from '/diversiart.jpg';
 import { loginUsuario } from '../../services/api';
-import { useState } from "react";
+import { useState } from 'react';
 
 const Login = () => {
-
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
   const [error, setError] = useState('');
@@ -34,7 +33,8 @@ const Login = () => {
     <StyleContainerLogin>
       <div className="content">
         <div>
-          <imgsrc={diversiartImg}
+          <img
+            src={diversiartImg}
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
           />
