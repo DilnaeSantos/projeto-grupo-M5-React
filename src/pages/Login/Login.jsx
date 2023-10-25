@@ -1,8 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Textfield from '../../components/common/Texfield/Textfield';
 import { StyleContainerLogin } from './login.styles';
 import Button from '../../components/common/Button/Button';
+import diversiartImg from '/diversiart.jpg';
 
 const Login = () => {
   return (
@@ -10,7 +12,7 @@ const Login = () => {
       <div className="content">
         <div>
           <img
-            src="../../../public/diversiart.jpg"
+            src={diversiartImg}
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
           />
