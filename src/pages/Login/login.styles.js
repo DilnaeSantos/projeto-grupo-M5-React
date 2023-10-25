@@ -34,8 +34,8 @@ export const StyleContainerLogin = styled.main`
       }
     }
     .imgDiversiArt {
-      width: 800px;
-      height: 500px;
+      width: 600px;
+      height: 300px;
       border-radius: 10px;
       box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
         4px 4px 8px 0px rgba(0, 0, 0, 0.25);
