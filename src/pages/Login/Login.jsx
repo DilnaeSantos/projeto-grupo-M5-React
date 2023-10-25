@@ -8,8 +8,15 @@ const Login = () => {
   return (
     <StyleContainerLogin>
       <div className="content">
+        <div>
+          <img
+            src="../../../public/diversiart.jpg"
+            alt="Imagem com o nome DiversiArt"
+            className="imgDiversiArt"
+          />
+        </div>
         <form>
-          <h1>DiversiArt</h1>
+          <h1>LOGIN</h1>
 
           <Textfield
             label="Email"
