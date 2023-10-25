@@ -9,7 +9,7 @@ export const StyleContainerLogin = styled.main`
 
   > .content {
     display: flex;
-    padding: 48px;
+    padding: 38px;
     height: fit-content;
     gap: 20px;
     justify-content: space-between;
@@ -22,7 +22,7 @@ export const StyleContainerLogin = styled.main`
     > form {
       border-radius: 16px;
       display: flex;
-      height: 500px;
+      height: 400px;
       padding: 20px;
       flex-direction: column;
       justify-content: center;
@@ -35,7 +35,7 @@ export const StyleContainerLogin = styled.main`
     }
     .imgDiversiArt {
       width: 600px;
-      height: 300px;
+      height: 400px;
       border-radius: 10px;
       box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
         4px 4px 8px 0px rgba(0, 0, 0, 0.25);
