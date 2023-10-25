@@ -63,4 +63,20 @@ a{
   font-weight: 400;
   line-height: normal;
 }
+
+ /* perssonalização dos scrolls */
+ *::-webkit-scrollbar {
+	width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+	background: #8a4546;
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: #c4ab9a;
+	border-radius: 10px;
+	border: 2px solid #8a4546;
+}
+
 `;
