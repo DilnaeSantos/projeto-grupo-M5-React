@@ -5,23 +5,24 @@ export const StyleContainerLogin = styled.main`
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #c4ab9a;
+  background: #c5af9a;
 
   > .content {
     display: flex;
     padding: 48px;
     height: fit-content;
+    gap: 20px;
     justify-content: space-between;
     align-items: center;
     border-radius: 16px;
-    background: #f5f5f5;
+    background: #f3efe4;
     box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
       4px 4px 8px 0px rgba(0, 0, 0, 0.25);
 
     > form {
       border-radius: 16px;
-      background: #f5f5f5;
       display: flex;
+      height: 500px;
       padding: 20px;
       flex-direction: column;
       justify-content: center;
@@ -31,6 +32,13 @@ export const StyleContainerLogin = styled.main`
       .destaque {
         font-weight: bold;
       }
+    }
+    .imgDiversiArt {
+      width: 800px;
+      height: 500px;
+      border-radius: 10px;
+      box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
+        4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     }
   }
 `;
