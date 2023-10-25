@@ -20,7 +20,7 @@ const Login = () => {
     const resposta = await loginUsuario(email, senha);
 
     if (resposta.success) {
-      navigate('/artesao');
+      navigate('/');
       localStorage.setItem('id', resposta.data.id);
       localStorage.setItem('nome', resposta.data.nome);
     } else {
