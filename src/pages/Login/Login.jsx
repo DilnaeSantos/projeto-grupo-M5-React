@@ -1,10 +1,29 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import Textfield from '../../components/common/Texfield/Textfield';
 import { StyleContainerLogin } from './login.styles';
 import Button from '../../components/common/Button/Button';
+import { loginUsuario } from '../../services/api';
 
 const Login = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [error, setError] = useState();
+
+  async function handleLogin(e) {
+    e.preventDefault();
+    const resposta = await loginUsuario(email, senha);
+
+    if (resposta.success) {
+      navigate('/artesao');
+      localStorage.setItem('id', resposta.data.id);
+      localStorage.setItem('nome', resposta.data.nome);
+    } else {
+      setError(resposta.message);
+    }
+    console.log(resposta);
+  }
   return (
     <StyleContainerLogin>
       <div className="content">
@@ -24,6 +43,8 @@ const Login = () => {
             placeholder="email@email.com"
             type="email"
             required
+            value={email}
+            onChange={(e) => setEmail(e)}
           />
 
           <Textfield
@@ -32,6 +53,8 @@ const Login = () => {
             placeholder="●●●●●●●"
             type="password"
             required
+            value={senha}
+            onChange={(e) => setSenha(e)}
           />
           <p>
             Ainda não tem conta?
@@ -40,7 +63,7 @@ const Login = () => {
             </Link>
           </p>
 
-          <Button texto={'Entrar'} width={'100%'} />
+          <Button texto={'Entrar'} width={'100%'} onClick={handleLogin} />
         </form>
       </div>
     </StyleContainerLogin>
