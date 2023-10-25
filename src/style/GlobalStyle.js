@@ -10,6 +10,7 @@ export const GlobalStyle = createGlobalStyle`
 
 html,
 :root {
+  background-color: #c4ab9a;
   width: 100%;
   min-height: 100vh;
 }
@@ -79,4 +80,60 @@ a{
 	border: 2px solid #8a4546;
 }
 
+`;
+export const HomeStyle = createGlobalStyle`
+.home {
+      
+    
+  h1 {
+    color: #8a4546;
+  }
+
+  nav {
+    background-color: #8a4546;
+      text-align: center;
+      padding: 10px;
+  }
+
+  nav a {
+    text-decoration: none;
+    color: #8a4546;
+      margin: 10px;
+  }
+
+  main {
+    padding: 20px;
+  }
+
+ 
+
+  h2 {
+    color: #8a4546;
+    text-align: center;
+    
+      
+  }
+
+  p {
+    text-align: center;
+    margin-top: 20px;
+}
+
+  .artesanato {
+    display: block; 
+    margin: 0 auto 20px;
+    border-radius: 30%;
+    height: 200px;
+    margin-top: 20px;
+  }
+  
+  .artesa {
+    display: block; 
+    margin: 0 auto 20px; 
+    border-radius: 30%;
+    height: 200px;
+    margin-top: 20px;
+  }
+
+}
 `;
