@@ -15,7 +15,7 @@ const Produtos = () => {
     };
 
     fetchProdutos(); // Chama a função para buscar os produtos quando o componente é montado
-  }, []); // O array vazio como segundo argumento faz com que o useEffect seja executado apenas uma vez após a montagem do componente
+  }, []); // O array vazio executa o useEffect
 
   return (
     <div className="produtos-container">
