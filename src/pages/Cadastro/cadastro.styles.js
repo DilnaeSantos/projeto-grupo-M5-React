@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const StyleContainerCadastro = styled.main`
 
 width: 100%;
-height: 100vh;
+height: 170vh;
 display: flex;
 align-items: center;
 justify-content: center;
