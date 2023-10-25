@@ -9,7 +9,7 @@ export const StyleContainerLogin = styled.main`
 
   > .content {
     display: flex;
-    padding: 48px;
+    padding: 38px;
     height: fit-content;
     gap: 20px;
     justify-content: space-between;
@@ -22,7 +22,7 @@ export const StyleContainerLogin = styled.main`
     > form {
       border-radius: 16px;
       display: flex;
-      height: 500px;
+      height: 400px;
       padding: 20px;
       flex-direction: column;
       justify-content: center;
