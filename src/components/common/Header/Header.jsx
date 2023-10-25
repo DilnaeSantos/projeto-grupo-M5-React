@@ -5,18 +5,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHouse } from '@fortawesome/free-solid-svg-icons';
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-
 const Header = ({ titulo }) => {
   return (
     <HeaderContainer>
       <LeftLinks>
-        <Link to="/home"><FontAwesomeIcon icon={faHouse}   size='xl'/></Link>
+        <Link to="/home">
+          <FontAwesomeIcon icon={faHouse} size="xl" />
+        </Link>
       </LeftLinks>
       <RightLinks>
         <Link to="/">Produtos</Link>
         <Link to="/">Contato</Link>
         <Link to="/cadastro">Cadastre-se</Link>
-        <Link to="/login"><FontAwesomeIcon icon={faUser}  size='lg' /> Efetuar login</Link>
+        <Link to="/login">
+          <FontAwesomeIcon icon={faUser} size="lg" /> Efetuar login
+        </Link>
       </RightLinks>
       {titulo}
     </HeaderContainer>
@@ -30,7 +33,7 @@ const HeaderContainer = styled.header`
   justify-content: space-between;
   align-items: center;
   box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
-  
+
   a {
     text-decoration: none;
     color: white;
@@ -38,10 +41,9 @@ const HeaderContainer = styled.header`
     font-size: 20px;
     transition: color 0.3s;
 
-    &:hover{
+    &:hover {
       color: #c4ab9a;
       transform: scale(1.1);
-    
     }
   }
 `;
