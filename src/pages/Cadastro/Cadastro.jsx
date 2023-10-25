@@ -1,0 +1,125 @@
+// eslint-disable-next-line no-unused-vars
+import React from 'react'
+import Textfield from '../../components/common/Texfield/Textfield';
+import Button from '../../components/common/Button/Button';
+import { Link } from 'react-router-dom';
+import { StyleContainerCadastro } from './cadastro.styles';
+import { postartesaos } from '../../services/api';
+import { useState } from "react";
+//import { useNavigate } from 'react-router-dom'
+
+const Cadastro = () => {
+
+  const [nome, setNome] = useState('')
+  const [telefone, settelefone] = useState('')
+  const [email, setEmail] = useState('')
+  const [tipoDeArte, settipoDeArte] = useState('')
+  const [bio, setbio] = useState('')
+  const [senha, setSenha] = useState('')
+
+
+  //const navigate = useNavigate()
+
+  const handleCadastro = async (e) => {
+    e.preventDefault()
+
+    const body = {
+      nome,
+      telefone,
+      email,
+      tipoDeArte,
+      bio,
+    }
+
+    if (senha === senha) {
+      const resposta = await postartesaos(body, senha)
+      localStorage.setItem('id', resposta.data.id)
+      localStorage.setItem('nome', resposta.data.nome)
+      console.log(resposta)
+
+    } else {
+      console.log('as senhas precisam ser iguais')
+    }
+  }
+  return (
+<StyleContainerCadastro>
+    <form>
+        <div className='content'>
+            <h1>Cadastro</h1>
+                <Textfield
+                label="Nome completo:"
+                name="nome"
+                placeholder="Nome Completo"
+                type="text"
+                value={nome}
+                onChange={(e) => setNome(e)}
+                required
+                />
+
+
+                <Textfield
+                label="Email"
+                name="email"
+                placeholder="email@email.com"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e)}
+                required
+                />
+
+                <Textfield
+                label="Telefone:"
+                name="telefone"
+                placeholder="(XX) XXXXX-XXXX"
+                type="number"
+                value={telefone}
+                onChange={(e) => settelefone(e)}
+                required
+                />
+
+                <Textfield
+                label="Qual o seu tipo de arte?"
+                name="tipoDeArte"
+                placeholder="Tipo de arte"
+                type="text"
+                value={tipoDeArte}
+                onChange={(e) => settipoDeArte(e)}
+                required
+                />
+
+                <Textfield
+                label="Nos fale um pouco sobre você"
+                name="minibio"
+                placeholder="Descreva-se de forma breve"
+                type="text"
+                value={bio}
+                onChange={(e) => setbio(e)}
+                required
+                />
+
+                <Textfield
+                label="Senha"
+                name="senha"
+                placeholder="●●●●●●●"
+                type="password"
+                value={senha}
+                onChange={(e) => setSenha(e)}
+                required
+                />
+
+                <p>
+                Já possui conta?
+                <Link to="/login" className="destaque">
+                Realizar login
+                </Link>
+                </p>
+
+                <Button onClick={(e) => handleCadastro(e)} texto={'Entrar'} width={'100%'} />
+
+        </div>
+    </form>
+    </StyleContainerCadastro>
+  )
+}
+
+export default Cadastro
