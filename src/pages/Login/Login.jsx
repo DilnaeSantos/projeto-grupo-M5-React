@@ -4,9 +4,13 @@ import { Link, useNavigate } from 'react-router-dom';
 import Textfield from '../../components/common/Texfield/Textfield';
 import { StyleContainerLogin } from './login.styles';
 import Button from '../../components/common/Button/Button';
-import diversiartImg from '/diversiart.jpg';
+import diversiartImg from '/diversiart.png';
 import { loginUsuario } from '../../services/api';
+<<<<<<< HEAD
+import { useState } from "react";
+=======
 import { useState } from 'react';
+>>>>>>> cd4ef75e35b0edf7ab3a7e2db88ad235eb377047
 
 const Login = () => {
   const [email, setEmail] = useState('');
