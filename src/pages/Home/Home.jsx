@@ -9,6 +9,7 @@ const Home = () => {
   return (
     <div className='home'>
       <HomeStyle />
+      <Header />
 
       <main>
           <h2>Bem vindo a Diversiart
