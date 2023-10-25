@@ -1,10 +1,4 @@
-import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import Textfield from '../../components/common/Texfield/Textfield';
-import { StyleContainerLogin } from './login.styles';
-import Button from '../../components/common/Button/Button';
-import { loginUsuario } from '../../services/api';
-import diversiArt from '../../assets/diversiart.jpg';
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +24,9 @@ const Login = () => {
       <div className="content">
         <div>
           <img
-            src={diversiArt}
+
+            src={diversiartImg}
+
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
           />
