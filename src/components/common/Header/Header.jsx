@@ -15,7 +15,7 @@ const Header = ({ titulo }) => {
       <RightLinks>
         <Link to="/">Produtos</Link>
         <Link to="/">Contato</Link>
-        <Link to="/">Cadastre-se</Link>
+        <Link to="/cadastro">Cadastre-se</Link>
         <Link to="/login"><FontAwesomeIcon icon={faUser}  size='lg' /> Efetuar login</Link>
       </RightLinks>
       {titulo}
