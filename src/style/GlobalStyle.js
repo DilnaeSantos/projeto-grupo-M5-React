@@ -31,7 +31,6 @@ input {
   outline: none;
 }
 
-
 h2{
   
   font-family: 'Montserrat';
