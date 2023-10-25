@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 import { StyleContainerCadastro } from './cadastro.styles';
 import { postartesaos } from '../../services/api';
 import { useState } from "react";
+import Header from '../../components/common/Header/Header';
 //import { useNavigate } from 'react-router-dom'
 
 const Cadastro = () => {
@@ -42,6 +43,8 @@ const Cadastro = () => {
     }
   }
   return (
+<div>
+<Header/>
 <StyleContainerCadastro>
     <form>
         <div className='content'>
@@ -119,6 +122,7 @@ const Cadastro = () => {
         </div>
     </form>
     </StyleContainerCadastro>
+</div>
   )
 }
 
