@@ -34,8 +34,7 @@ const Login = () => {
     <StyleContainerLogin>
       <div className="content">
         <div>
-          <img
-            src={diversiartImg}
+          <imgsrc={diversiartImg}
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
           />
