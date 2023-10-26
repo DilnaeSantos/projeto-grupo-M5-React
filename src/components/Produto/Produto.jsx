@@ -48,7 +48,7 @@ const Produto = ({
 
         <StyleEscolha>
           <Button
-            texto={<PencilSimpleLine size={32} />}
+            texto={<PencilSimpleLine size={16} />}
             onClick={() =>
               handleEditarProduto({
                 id: idProduto,
@@ -62,7 +62,7 @@ const Produto = ({
             }
           />
           <Button
-            texto={<Trash size={32} />}
+            texto={<Trash size={16} />}
             onClick={() => handleAbrirModalDelete(idProduto)}
           />
         </StyleEscolha>

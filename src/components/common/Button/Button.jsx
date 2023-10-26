@@ -16,10 +16,10 @@ const StyleButton = styled.button`
   width: auto;
   border-radius: 8px;
   box-shadow: 5px 6px 4px 0px rgba(0, 0, 0, 0.25);
-  padding: 12px 48px;
+  padding: 5px 15px;
   align-items: center;
   font-family: 'Roboto', sans-serif;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
