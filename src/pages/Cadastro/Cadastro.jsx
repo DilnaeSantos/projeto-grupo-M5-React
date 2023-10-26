@@ -117,7 +117,7 @@ const Cadastro = () => {
                 </Link>
                 </p>
 
-                <Button onClick={(e) => handleCadastro(e)} texto={'Entrar'} width={'100%'} />
+                <Button onClick={(e) => handleCadastro(e)} texto={'Cadastrar'} width={'100%'} />
 
         </div>
     </form>

@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import Button from '../common/Button/Button';
 import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
