@@ -11,6 +11,7 @@ import {
 } from './Produto.style';
 
 const Produto = ({
+  type,
   idProduto,
   imagemProduto,
   nomeProduto,
@@ -46,27 +47,30 @@ const Produto = ({
             {precoProduto}
           </p>
         </StylesDescricao>
-
-        <StyleEscolha>
-          <Button
-            texto={<PencilSimpleLine size={16} />}
-            onClick={() =>
-              handleEditarProduto({
-                id: idProduto,
-                url: imagemProduto,
-                nome: nomeProduto,
-                descricao: descricaoProduto,
-                emailArtesao: emailArtesao,
-                qtDeEstoque: qtdEstoque,
-                preco: precoProduto,
-              })
-            }
-          />
-          <Button
-            texto={<Trash size={16} />}
-            onClick={() => handleAbrirModalDelete(idProduto)}
-          />
-        </StyleEscolha>
+        {type == 'cadastar' ? (
+          <StyleEscolha>
+            <Button
+              texto={<PencilSimpleLine size={16} />}
+              onClick={() =>
+                handleEditarProduto({
+                  id: idProduto,
+                  url: imagemProduto,
+                  nome: nomeProduto,
+                  descricao: descricaoProduto,
+                  emailArtesao: emailArtesao,
+                  qtDeEstoque: qtdEstoque,
+                  preco: precoProduto,
+                })
+              }
+            />
+            <Button
+              texto={<Trash size={16} />}
+              onClick={() => handleAbrirModalDelete(idProduto)}
+            />
+          </StyleEscolha>
+        ) : (
+          ''
+        )}
       </StylesContainer>
     </StylesProduto>
   );

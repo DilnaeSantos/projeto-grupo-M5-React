@@ -124,6 +124,7 @@ const Artesao = () => {
           {listaProdutos.map((produto, index) => {
             return (
               <Produto
+                type={'cadastar'}
                 key={index}
                 idProduto={produto._id}
                 imagemProduto={produto.url}
