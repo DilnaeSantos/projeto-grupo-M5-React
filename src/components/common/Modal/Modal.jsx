@@ -64,10 +64,10 @@ const StylesContentModal = styled.div`
 
   > label {
     padding: 5px;
-    margin-top: 18px;
+    margin-top: 10px;
   }
 
   > Button {
-    margin-top: 18px;
+    margin-top: 15px;
   }
 `;
