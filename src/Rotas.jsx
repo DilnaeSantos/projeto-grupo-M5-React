@@ -5,6 +5,7 @@ import { GlobalStyle } from './style/GlobalStyle';
 import Login from './pages/Login/Login'; 
 import Cadastro from './pages/Cadastro/Cadastro'
 import Home from './pages/Home/Home';
+import Produtos from './pages/Produtos/Produtos';
 
 const Rotas = () => {
   return (
@@ -13,6 +14,7 @@ const Rotas = () => {
       <Routes>
         <Route path="/login" element={<Login />} />
         <Route path="/cadastro" element={<Cadastro />} />
+        <Route path="/produtos" element={<Produtos />} />
         <Route path="/" element={<Home />} />
       </Routes>
     </BrowserRouter>
