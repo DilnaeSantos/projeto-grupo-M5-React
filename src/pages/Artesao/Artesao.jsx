@@ -1,9 +1,10 @@
+// eslint-disable-next-line no-unused-vars
 import React, { useEffect, useState } from 'react';
 import { ProdutosCadastro, StyleInput, StyleTextArea } from './artesao.styles';
 import Button from '../../components/common/Button/Button';
 import Modal from '../../components/common/Modal/Modal';
 import Produto from '../../components/Produto/Produto';
-import Header from '../../components/common/Header/Header';
+import HeaderArdesao from '../../components/common/HeaderArdesao/Header';
 import {
   deletarProduto,
   getProdutosArtesao,
@@ -113,7 +114,7 @@ const Artesao = () => {
   }, []);
   return (
     <>
-      <Header />
+      <HeaderArdesao />
       <ProdutosCadastro>
         <section>
           <h2>Produtos cadastrados: </h2>

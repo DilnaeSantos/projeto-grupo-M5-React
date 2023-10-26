@@ -1,0 +1,58 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faHouse } from '@fortawesome/free-solid-svg-icons';
+import { faUser } from '@fortawesome/free-solid-svg-icons';
+
+
+// eslint-disable-next-line react/prop-types
+const HeaderArdesao = ({ titulo }) => {
+  return (
+    <HeaderContainer>
+      <LeftLinks>
+        <Link to="/"><FontAwesomeIcon icon={faHouse}   size='xl'/></Link>
+      </LeftLinks>
+      <RightLinks>
+        <Link to="/produtos">Produtos</Link>
+        <Link to="/contato">Contato</Link>
+      </RightLinks>
+      {titulo}
+    </HeaderContainer>
+  );
+};
+
+const HeaderContainer = styled.header`
+  background-color: #8a4546;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.2);
+  
+  a {
+    text-decoration: none;
+    color: white;
+    margin-right: 40px;
+    font-size: 20px;
+    transition: color 0.3s;
+
+    &:hover{
+      color: #c4ab9a;
+      transform: scale(1.1);
+    
+    }
+  }
+`;
+
+const LeftLinks = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const RightLinks = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+export default HeaderArdesao;

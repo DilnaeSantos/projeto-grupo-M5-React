@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import Button from '../common/Button/Button';
 import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
@@ -48,7 +49,7 @@ const Produto = ({
 
         <StyleEscolha>
           <Button
-            texto={<PencilSimpleLine size={32} />}
+            texto={<PencilSimpleLine size={16} />}
             onClick={() =>
               handleEditarProduto({
                 id: idProduto,
@@ -62,7 +63,7 @@ const Produto = ({
             }
           />
           <Button
-            texto={<Trash size={32} />}
+            texto={<Trash size={16} />}
             onClick={() => handleAbrirModalDelete(idProduto)}
           />
         </StyleEscolha>

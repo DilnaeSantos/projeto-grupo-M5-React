@@ -7,6 +7,7 @@ display: flex;
 align-items: center;
 justify-content: center;
 background: #c4ab9a;
+margin-top: 4%;
 
 .destaque{
     font-weight:bold;
