@@ -27,7 +27,7 @@ export const StyleContainerLogin = styled.main`
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 24px;
+      gap: 12px;
 
       .destaque {
         font-weight: bold;
