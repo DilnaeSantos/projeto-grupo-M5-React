@@ -182,7 +182,7 @@ const Artesao = () => {
           name=""
           id=""
           cols="30"
-          rows="5"
+          rows="2"
           value={descricaoProduto}
           onChange={(evento) => setDescricaoProduto(evento.target.value)}
         ></StyleTextArea>
