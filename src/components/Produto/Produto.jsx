@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../common/Button/Button';
-//import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
+import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
 import {
   StyleEscolha,
   StylesContainer,
@@ -10,7 +10,7 @@ import {
 } from './Produto.style';
 
 const Produto = ({
-  index,
+  idProduto,
   imagemProduto,
   nomeProduto,
   precoProduto,
@@ -51,6 +51,7 @@ const Produto = ({
             texto={<PencilSimpleLine size={32} />}
             onClick={() =>
               handleEditarProduto({
+                id: idProduto,
                 url: imagemProduto,
                 nome: nomeProduto,
                 descricao: descricaoProduto,
@@ -62,7 +63,7 @@ const Produto = ({
           />
           <Button
             texto={<Trash size={32} />}
-            onClick={handleAbrirModalDelete}
+            onClick={() => handleAbrirModalDelete(idProduto)}
           />
         </StyleEscolha>
       </StylesContainer>
