@@ -18,11 +18,12 @@ background: #c4ab9a;
     justify-content: space-between;
     align-items: center;
     border-radius: 16px;
-    background: #f5f5f5;
+    background-image : url(../../../public/image-cadastro.svg) ;
     box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
     4px 4px 8px 0px rgba(0, 0, 0, 0.25);
     gap: 15px;
 }
+
 
 
 
