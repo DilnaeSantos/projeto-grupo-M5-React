@@ -30,9 +30,13 @@ button,
 input {
   outline: none;
 }
-
+h1{
+  font-family: 'Glass Antiqua';
+  color: #64531f;
+  margin: auto;
+}
 h2{
-  
+  color:#8a4546;
   font-family: 'Montserrat';
   font-size: 38px;
   font-style: normal;
@@ -83,10 +87,6 @@ a{
 export const HomeStyle = createGlobalStyle`
 .home {
       
-    
-  h1 {
-    color: #8a4546;
-  }
 
   nav {
     background-color: #8a4546;
@@ -132,6 +132,11 @@ export const HomeStyle = createGlobalStyle`
     border-radius: 30%;
     height: 200px;
     margin-top: 20px;
+  }
+
+  .foto-home-1 {
+   display: flex;
+   max-width: 300px;
   }
 
 }
