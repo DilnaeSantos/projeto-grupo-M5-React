@@ -12,7 +12,7 @@ const Contato = () => {
     <div className="content">
         
         <form>
-        <h1>Contato</h1>
+        <h1 className='titulo-contato'>Contato</h1>
 
             <Textfield
                 label="Nome:"
