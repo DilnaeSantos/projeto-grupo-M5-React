@@ -4,6 +4,7 @@ import Header from "../../components/common/Header/Header";
 import styles from "../Home/home.styles.js";
 import fotoHome from "/foto-home-1.svg";
 import fotoHome2 from "/foto-home-2.svg";
+import fotoHome3 from "/foto-home-3.svg";
 
 const Home = () => {
   return (
@@ -12,7 +13,7 @@ const Home = () => {
       <h1 style={styles.tituloHome}>DiversiArt</h1>
       <main style={styles.container}>
         <div style={styles.imageContainer1}>
-          <img 
+          <img
             src={fotoHome}
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
@@ -20,8 +21,7 @@ const Home = () => {
           />
         </div>
         <div style={styles.textContainer1}>
-          <h2>Bem vindo a DiversiArt</h2>
-          <p>autenticidade, qualidade e inclusão de artesãos</p>
+          <h2>Autenticidade, qualidade e inclusão de artesãos.</h2>
         </div>
       </main>
 
@@ -36,11 +36,30 @@ const Home = () => {
         <div style={styles.textContainer2}>
           <h2>Conheça um pouco sobre o DiversiArt</h2>
           <p>
-            O DiversiArt Garante a autenticidade e qualidade dos produtos
-            vendidos no marketplace, construindo a confiança dos clientes.
-            Promove a inclusão e a representatividade de grupos minorizados,
-            alinhando-se com a missão do DiversiArt e também, ajuda a manter um
-            ambiente seguro e ético para compradores e vendedores.
+            Acreditamos no poder da expressão criativa e na riqueza da
+            diversidade. Somos um ponto de encontro onde artesãos e
+            empreendedores de grupos minorizados trazem à vida suas paixões e
+            talentos únicos.
+          </p>
+        </div>
+      </main>
+      <main style={styles.container}>
+        <div style={styles.imageContainer3}>
+          <img
+            src={fotoHome3}
+            alt="Imagem com o nome DiversiArt"
+            className="imgDiversiArt"
+            style={{ width: "400px", height: "auto" }}
+          />
+        </div>
+        <div style={styles.textContainer3}>
+          <h2>Todo Mês Uma Loja Fisica</h2>
+          <p>
+            Celebramos parcerias mensais com estabelecimentos locais, dando aos
+            nossos artesãos a chance de expor e vender suas criações. Envolvendo
+            a comunidade, oferecemos uma experiência de compra autêntica. Fique
+            de olho para descobrir o próximo local; sua cidade pode ser o
+            próximo destino!
           </p>
         </div>
       </main>
