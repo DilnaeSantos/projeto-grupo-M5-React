@@ -1,39 +1,33 @@
-// eslint-disable-next-line no-unused-vars
-// import React from 'react';
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Textfield from '../../components/common/Texfield/Textfield';
 import { StyleContainerLogin } from './login.styles';
 import Button from '../../components/common/Button/Button';
 import diversiartImg from '/diversiart.png';
-// import { loginUsuario } from '../../services/api';
-// import { useState } from "react";
+import { loginUsuario } from '../../services/api';
+import { useState } from 'react';
 const Login = () => {
-  // const [email, setEmail] = useState('');
-  // const [senha, setSenha] = useState('');
-  // const [error, setError] = useState('');
+  const [email, setEmail] = useState('');
+  const [senha, setSenha] = useState('');
+  const [error, setError] = useState('');
 
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
-  // async function handleLogin(e) {
-  //   e.preventDefault();
-  //   const resposta = await loginUsuario(email, senha);
+  async function handleLogin(e) {
+    e.preventDefault();
+    const resposta = await loginUsuario(email, senha);
 
-  //   if (resposta.success) {
-  //     navigate('/');
-  //     localStorage.setItem('id', resposta.data.id);
-  //     localStorage.setItem('nome', resposta.data.nome);
-  //   } else {
-  //     setError(resposta.message);
-  //   }
-  //   console.log(resposta);
-  //   console.log(error);
-  // }
-
-  const navigate = useNavigate()
-
-  const handleClick = () => {
-    navigate('/artesao')
-  } 
+    if (resposta.success) {
+      localStorage.setItem('email', email);
+      navigate('/artesao');
+      localStorage.setItem('id', resposta.data.id);
+      localStorage.setItem('nome', resposta.data.nome);
+    } else {
+      setError(resposta.message);
+    }
+    console.log(resposta);
+    console.log(error);
+  }
 
   return (
     <StyleContainerLogin>
@@ -54,8 +48,8 @@ const Login = () => {
             placeholder="email@email.com"
             type="email"
             required
-            // value={email}
-            // onChange={(e) => setEmail(e)}
+            value={email}
+            onChange={(e) => setEmail(e)}
           />
 
           <Textfield
@@ -64,8 +58,8 @@ const Login = () => {
             placeholder="●●●●●●●"
             type="password"
             required
-            // value={senha}
-            // onChange={(e) => setSenha(e)}
+            value={senha}
+            onChange={(e) => setSenha(e)}
           />
           <p>
             Ainda não tem conta?
@@ -74,7 +68,7 @@ const Login = () => {
             </Link>
           </p>
 
-          <Button texto={'Entrar'} width={'100%'} onClick={handleClick} />
+          <Button texto={'Entrar'} width={'100%'} onClick={handleLogin} />
         </form>
       </div>
     </StyleContainerLogin>

@@ -31,7 +31,7 @@ export const loginUsuario = async (email, senha) => {
       },
     };
 
-    const resposta = await api.post('/artesaos', { email }, config);
+    const resposta = await api.post('/loginArtesao', { email }, config);
 
     return resposta.data;
   } catch (error) {
