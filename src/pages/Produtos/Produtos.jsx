@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 import Header from '../../components/common/Header/Header';
 import { getProdutosArtesao } from '../../services/api';
-import { StyleCard } from './produtos.styles';
+import { StyleConatiner, StyledSection } from './produtos.styles';
+import Produto from '../../components/Produto/Produto';
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
@@ -17,23 +18,24 @@ const Produtos = () => {
   return (
     <>
       <Header />
-      <div className="produtos-container">
+      <StyledSection>
         <h1>Produtos Disponíveis</h1>
-        <ul>
-          {produtos.map((produto) => (
-            <li key={produto.id}>
-              <StyleCard>
-                <img src={produto.url} alt={produto.descricao} />
-                <h2>{produto.nome}</h2>
-                <p>{produto.descricao}</p>
-                <p>Quantidade: {produto.qtdEstoque}</p>
-                <p>Contato: {produto.emailArtesao}</p>
-                <p>Preço :{produto.preco},00</p>
-              </StyleCard>
-            </li>
-          ))}
-        </ul>
-      </div>
+        <StyleConatiner>
+          <ul>
+            {produtos.map((produto) => (
+              <Produto
+                idProduto={produto._id}
+                imagemProduto={produto.url}
+                nomeProduto={produto.nome}
+                precoProduto={produto.preco}
+                qtdEstoque={produto.qtdEstoque}
+                emailArtesao={produto.emailArtesao}
+                descricaoProduto={produto.descricao}
+              />
+            ))}
+          </ul>
+        </StyleConatiner>
+      </StyledSection>
     </>
   );
 };

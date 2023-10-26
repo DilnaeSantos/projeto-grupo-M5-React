@@ -16,6 +16,7 @@ export const StylesProduto = styled.div`
   display: flex;
   margin: 15px;
   background-color: #f3efe4;
+  width: 600px;
   border-radius: 8px;
   box-sizing: border-box;
   box-shadow: -4px -4px 8px 0px rgba(0, 0, 0, 0.25),
