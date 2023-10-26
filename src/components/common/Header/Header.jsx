@@ -10,11 +10,11 @@ const Header = ({ titulo }) => {
   return (
     <HeaderContainer>
       <LeftLinks>
-        <Link to="/home"><FontAwesomeIcon icon={faHouse}   size='xl'/></Link>
+        <Link to="/"><FontAwesomeIcon icon={faHouse}   size='xl'/></Link>
       </LeftLinks>
       <RightLinks>
-        <Link to="/">Produtos</Link>
-        <Link to="/">Contato</Link>
+        <Link to="/produtos">Produtos</Link>
+        <Link to="/contato">Contato</Link>
         <Link to="/cadastro">Cadastre-se</Link>
         <Link to="/login"><FontAwesomeIcon icon={faUser}  size='lg' /> Efetuar login</Link>
       </RightLinks>

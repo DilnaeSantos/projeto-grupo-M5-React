@@ -47,6 +47,8 @@ const StyleTextfield = styled.fieldset`
   flex-direction: column;
   gap: 12px;
   padding: 0;
+  margin-bottom:15px;
+  margin-top: 15px;
 
   > label {
     color: black;
@@ -63,7 +65,9 @@ const StyledTextArea = styled.textarea`
   height: 132px;
   padding: 8px 12px;
   border-radius: 8px;
-  background: black;
   box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
   resize: none;
+  border:none;
+  font-size: 24px;
+  margin-bottom: 15px;
 `;
