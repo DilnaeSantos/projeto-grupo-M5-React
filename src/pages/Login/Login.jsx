@@ -9,7 +9,7 @@ import { useState } from 'react';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
-  const [error, setError] = useState('');
+  const [error, setError] = useState();
 
   const navigate = useNavigate();
 
@@ -39,7 +39,7 @@ const Login = () => {
             className="imgDiversiArt"
           />
         </div>
-        <form>
+        <form onSubmit={handleLogin}>
           <h1>LOGIN</h1>
 
           <Textfield
@@ -61,6 +61,7 @@ const Login = () => {
             value={senha}
             onChange={(e) => setSenha(e)}
           />
+          {error && <p style={{ color: 'red' }}>Email ou senha invalidas</p>}
           <p>
             Ainda não tem conta?
             <Link to="/cadastro" className="destaque">
@@ -68,7 +69,7 @@ const Login = () => {
             </Link>
           </p>
 
-          <Button texto={'Entrar'} width={'100%'} onClick={handleLogin} />
+          <Button texto={'Entrar'} width={'100%'} type="submit" />
         </form>
       </div>
     </StyleContainerLogin>
