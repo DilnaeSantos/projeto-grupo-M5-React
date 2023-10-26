@@ -29,12 +29,15 @@ export const StylesContainer = styled.div`
 
 export const StylesDescricao = styled.div`
   display: flex;
+  width: 500px;
   flex-direction: column;
   gap: 5px;
   justify-content: center;
   flex-wrap: wrap;
   padding-left: 25px;
-
+  > p {
+    word-wrap: break-word;
+  }
   > span {
     font-weight: bolder;
   }
