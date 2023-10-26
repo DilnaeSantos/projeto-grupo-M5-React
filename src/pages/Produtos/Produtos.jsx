@@ -1,36 +1,40 @@
-import { useState, useEffect } from "react";
-// import ProdutosRepository from "../../services/ProdutosRepository";
+import { useState, useEffect } from 'react';
+import Header from '../../components/common/Header/Header';
+import { getProdutosArtesao } from '../../services/api';
+import { StyleCard } from './produtos.styles';
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
 
+  async function buscarProdutos() {
+    const response = await getProdutosArtesao();
+    setProdutos(response);
+  }
+
   useEffect(() => {
-    const fetchProdutos = async () => {
-      try {
-        const response = await ProdutosRepository.buscarTodosOsProdutos();
-        setProdutos(response); // Define o estado produtos com os dados recebidos da API
-      } catch (error) {
-        console.error("Erro ao buscar produtos:", error);
-      }
-    };
-
-    fetchProdutos(); // Chama a função para buscar os produtos quando o componente é montado
-  }, []); // O array vazio executa o useEffect
-
+    buscarProdutos();
+  }, []);
   return (
-    <div className="produtos-container">
-      <h1>Produtos Disponíveis</h1>
-      <ul>
-        {produtos.map((produto) => (
-          <li key={produto.id}>
-            <img src={produto.imagemUrl} alt={produto.descricao} />
-            <h2>{produto.nome}</h2>
-            <p>{produto.descricao}</p>
-            <p>Quantidade: {produto.quantidade}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
+    <>
+      <Header />
+      <div className="produtos-container">
+        <h1>Produtos Disponíveis</h1>
+        <ul>
+          {produtos.map((produto) => (
+            <li key={produto.id}>
+              <StyleCard>
+                <img src={produto.url} alt={produto.descricao} />
+                <h2>{produto.nome}</h2>
+                <p>{produto.descricao}</p>
+                <p>Quantidade: {produto.qtdEstoque}</p>
+                <p>Contato: {produto.emailArtesao}</p>
+                <p>Preço :{produto.preco},00</p>
+              </StyleCard>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </>
   );
 };
 
