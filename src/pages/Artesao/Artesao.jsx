@@ -59,7 +59,7 @@ const Artesao = () => {
     };
 
     const response = await postProduto(body);
-    console.log(response);
+
     setAbrirModal(false);
     limparCampos();
     buscarProdutos();
@@ -76,7 +76,7 @@ const Artesao = () => {
       descricao: descricaoProduto,
     };
     const resposta = await patchProduto(idProduto, body);
-    console.log(resposta);
+
     setAbrirModal(false);
     setEEdicao(false);
     buscarProdutos();
@@ -90,10 +90,12 @@ const Artesao = () => {
 
   async function buscarProdutos() {
     const response = await getProdutosArtesao();
-    const emailArtesao = 'yohan@gmail.com';
+    const email = localStorage.getItem('email');
+    setEmailArtesao(email);
     const produtosFiltrados = response.filter(
-      (produto) => produto.emailArtesao == emailArtesao,
+      (produto) => produto.emailArtesao == email,
     );
+
     setListaProdutos(produtosFiltrados.length > 0 ? produtosFiltrados : []);
   }
 
@@ -168,12 +170,12 @@ const Artesao = () => {
           value={qtdEstoque}
           onChange={(evento) => setQtdEstoque(evento.target.value)}
         />
-        <label htmlFor="">Email Aretesão:</label>
+        {/* <label htmlFor="">Email Aretesão:</label>
         <StyleInput
           type="text"
           value={emailArtesao}
-          onChange={(evento) => setEmailArtesao(evento.target.value)}
-        />
+          onChange={(evento) => setEmailArtesao(evento.target.valueo)}
+        /> */}
         <label htmlFor="">Descrição</label>
         <StyleTextArea
           name=""
