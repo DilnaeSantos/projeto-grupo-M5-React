@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from '../common/Button/Button';
-import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
+// import { PencilSimpleLine, Trash } from '@phosphor-icons/react';
 import {
   StyleEscolha,
   StylesContainer,

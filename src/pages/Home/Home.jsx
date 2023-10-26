@@ -2,6 +2,8 @@
 import React from "react";
 import Header from "../../components/common/Header/Header";
 import styles from "../Home/home.styles.js";
+import fotoHome from "/foto-home-1.svg";
+import fotoHome2 from "/foto-home-2.svg";
 
 const Home = () => {
   return (
@@ -10,8 +12,8 @@ const Home = () => {
       <h1 style={styles.tituloHome}>DiversiArt</h1>
       <main style={styles.container}>
         <div style={styles.imageContainer1}>
-          <img
-            src="../../../public/foto-home-1.svg"
+          <img 
+            src={fotoHome}
             alt="Imagem com o nome DiversiArt"
             className="imgDiversiArt"
             style={{ width: "700px", height: "auto" }}
@@ -26,7 +28,7 @@ const Home = () => {
       <main style={styles.container}>
         <div style={styles.imageContainer2}>
           <img
-            src="../../../public/foto-home-2.svg"
+            src={fotoHome2}
             alt="Imagem com o nome DiversiArt"
             style={{ width: "700px", height: "auto" }}
           />
