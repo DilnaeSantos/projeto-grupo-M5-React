@@ -47,3 +47,62 @@ export const loginUsuario = async (email, senha) => {
     }
   }
 };
+
+export const getProdutosArtesao = async () => {
+  const resposta = await api.get(`/produtos`);
+  return resposta.data;
+};
+
+export const postProduto = async (body) => {
+  try {
+    const resposta = await api.post(`/produto`, body);
+    return resposta.data;
+  } catch (error) {
+    if (error.response) {
+      return {
+        message: error.response.data.message,
+        success: error.response.data.success,
+      };
+    } else {
+      return {
+        message: 'erro inesperado',
+      };
+    }
+  }
+};
+
+export const deletarProduto = async (idProduto) => {
+  try {
+    const resposta = await api.delete(`/produto/${idProduto}`);
+    return resposta.data;
+  } catch (error) {
+    if (error.response) {
+      return {
+        message: error.response.data.message,
+        success: error.response.data.success,
+      };
+    } else {
+      return {
+        message: 'erro inesperado',
+      };
+    }
+  }
+};
+
+export const patchProduto = async (idProduto, body) => {
+  try {
+    const resposta = await api.patch(`/produto/${idProduto}`, body);
+    return resposta.data;
+  } catch (error) {
+    if (error.response) {
+      return {
+        message: error.response.data.message,
+        success: error.response.data.success,
+      };
+    } else {
+      return {
+        message: 'erro inesperado',
+      };
+    }
+  }
+};

@@ -1,9 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { ProdutosCadastro, StyleInput, StyleTextArea } from './artesao.styles';
 import Button from '../../components/common/Button/Button';
 import Modal from '../../components/common/Modal/Modal';
 import Produto from '../../components/Produto/Produto';
 import Header from '../../components/common/Header/Header';
+import {
+  deletarProduto,
+  getProdutosArtesao,
+  patchProduto,
+  postProduto,
+} from '../../services/api';
 
 const Artesao = () => {
   const [abrirModal, setAbrirModal] = useState(false);
@@ -16,6 +22,7 @@ const Artesao = () => {
   const [qtdEstoque, setQtdEstoque] = useState('');
   const [emailArtesao, setEmailArtesao] = useState('');
   const [descricaoProduto, setDescricaoProduto] = useState('');
+  const [idProduto, setIdProduto] = useState('');
 
   function limparCampos() {
     setImagemProduto('');
@@ -31,6 +38,7 @@ const Artesao = () => {
 
   function handleEditarProduto(produto) {
     setEEdicao(true);
+    setIdProduto(produto.id);
     setImagemProduto(produto.url);
     setNomeProduto(produto.nome);
     setPrecoProduto(produto.preco);
@@ -40,48 +48,67 @@ const Artesao = () => {
     setAbrirModal(true);
   }
 
-  function handleSalvarProduto() {
+  async function handleSalvarProduto() {
     const body = {
       url: imagemProduto,
       nome: nomeProduto,
       preco: precoProduto,
-      qtDeEstoque: qtdEstoque,
+      qtdEstoque: qtdEstoque,
       emailArtesao: emailArtesao,
       descricao: descricaoProduto,
     };
-    console.log(body);
+
+    const response = await postProduto(body);
+    console.log(response);
     setAbrirModal(false);
     limparCampos();
+    buscarProdutos();
   }
 
-  async function handlePutProduto() {
+  async function handlePatchProduto() {
     const body = {
+      id: idProduto,
       url: imagemProduto,
       nome: nomeProduto,
       preco: precoProduto,
-      qtDeEstoque: qtdEstoque,
+      qtdEstoque: qtdEstoque,
       emailArtesao: emailArtesao,
       descricao: descricaoProduto,
     };
-    const resposta = await putTransacao(
-      idProduto,
-      body,
-      'a57501f9407c2174825bb862860ec23a',
-    );
+    const resposta = await patchProduto(idProduto, body);
     console.log(resposta);
     setAbrirModal(false);
-
-    handleBuscarTransacoes();
     setEEdicao(false);
+    buscarProdutos();
   }
 
-  function handleAbrirModalDelete() {
+  async function handleDeleteProduto() {
+    const resposta = await deletarProduto(idProduto);
+    buscarProdutos();
+    setModalDelete(false);
+  }
+
+  async function buscarProdutos() {
+    const response = await getProdutosArtesao();
+    const emailArtesao = 'yohan@gmail.com';
+    const produtosFiltrados = response.filter(
+      (produto) => produto.emailArtesao == emailArtesao,
+    );
+    setListaProdutos(produtosFiltrados.length > 0 ? produtosFiltrados : []);
+  }
+
+  function handleAbrirModalDelete(idProduto) {
+    setIdProduto(idProduto);
     setModalDelete(true);
   }
 
   function handleModal() {
     setAbrirModal(true);
   }
+
+  useEffect(() => {
+    buscarProdutos();
+  }, []);
   return (
     <>
       <Header />
@@ -95,11 +122,11 @@ const Artesao = () => {
             return (
               <Produto
                 key={index}
-                index={index}
+                idProduto={produto._id}
                 imagemProduto={produto.url}
                 nomeProduto={produto.nome}
                 precoProduto={produto.preco}
-                qtdEstoque={produto.qtDeEstoque}
+                qtdEstoque={produto.qtdEstoque}
                 emailArtesao={produto.emailArtesao}
                 descricaoProduto={produto.descricao}
                 handleEditarProduto={handleEditarProduto}
@@ -157,7 +184,7 @@ const Artesao = () => {
           onChange={(evento) => setDescricaoProduto(evento.target.value)}
         ></StyleTextArea>
         <Button
-          onClick={eEdicao ? handlePutProduto : handleSalvarProduto}
+          onClick={eEdicao ? handlePatchProduto : handleSalvarProduto}
           texto={eEdicao ? 'Salvar alterações' : 'ADICIONAR'}
         />
       </Modal>
@@ -170,7 +197,7 @@ const Artesao = () => {
         onClose={() => setModalDelete(false)}
       >
         <h3>Você deseja realmente excluir esse produto?</h3>
-        <Button texto={'sim'} onClick={''} />
+        <Button texto={'sim'} onClick={handleDeleteProduto} />
       </Modal>
     </>
   );
