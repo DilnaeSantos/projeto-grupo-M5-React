@@ -28,7 +28,9 @@ margin-top: 4%;
     gap: 15px;
 }
 
-
+.erro {
+    color: red;
+}
 
 
 `;

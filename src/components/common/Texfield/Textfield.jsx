@@ -21,16 +21,18 @@ const Textfield = ({
           onChange={(e) => onChange(e.target.value)}
           placeholder={placeholder}
           name={name}
+          desabled={false}
           required={required}
         />
       ) : (
         <Input
           hasError={hasError}
           value={value}
-          onChange={onChange}
+          onChange={(e) => onChange(e)}
           placeholder={placeholder}
           name={name}
           type={type}
+          desabled={false}
           required={required}
         />
       )}

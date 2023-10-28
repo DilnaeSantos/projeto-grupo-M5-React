@@ -17,31 +17,40 @@ const Cadastro = () => {
   const [tipoDeArte, settipoDeArte] = useState('')
   const [bio, setbio] = useState('')
   const [senha, setSenha] = useState('')
+  const [errorCadastro, setErrorCadastro] = useState('')
 
 
   //const navigate = useNavigate()
 
   const handleCadastro = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     const body = {
-      nome,
-      telefone,
-      email,
-      tipoDeArte,
-      bio,
-    }
+        nome,
+        telefone,
+        email,
+        tipoDeArte,
+        bio,
+        senha,
+    };
 
-    if (senha === senha) {
-      const resposta = await postartesaos(body, senha)
-      localStorage.setItem('id', resposta.data.id)
-      localStorage.setItem('nome', resposta.data.nome)
-      console.log(resposta)
+    try {
+      await postartesaos(body, senha);
 
-    } else {
-      console.log('as senhas precisam ser iguais')
+    } catch (erro) {
+        if (erro.response) {
+            if (erro.response.status === 406) {
+                setErrorCadastro('Email já cadastrado.');
+
+            } else {
+                setErrorCadastro(erro.response.data.message);
+            }
+        } else {
+            setErrorCadastro('Ocorreu um erro inesperado. Tente novamente mais tarde.');
+        }
     }
-  }
+};
+
   return (
 <div>
 <Header/>
@@ -109,6 +118,8 @@ const Cadastro = () => {
                 onChange={(e) => setSenha(e)}
                 required
                 />
+
+                <p className="erro">{errorCadastro}</p>
 
                 <p>
                 Já possui conta?
