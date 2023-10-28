@@ -13,7 +13,10 @@ export const ProdutosCadastro = styled.main`
   }
 
   > ul {
-    padding: 80px 100px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 80px 0;
   }
 `;
 

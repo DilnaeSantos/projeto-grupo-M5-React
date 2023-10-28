@@ -78,12 +78,12 @@ export const deletarProduto = async (idProduto) => {
   } catch (error) {
     if (error.response) {
       return {
-        message: error.response.data.message,
+        error: error.response.data.message,
         success: error.response.data.success,
       };
     } else {
       return {
-        message: 'erro inesperado',
+        error: 'erro inesperado',
       };
     }
   }
@@ -96,12 +96,12 @@ export const patchProduto = async (idProduto, body) => {
   } catch (error) {
     if (error.response) {
       return {
-        message: error.response.data.message,
+        error: error.response.data.message,
         success: error.response.data.success,
       };
     } else {
       return {
-        message: 'erro inesperado',
+        error: 'erro inesperado',
       };
     }
   }
