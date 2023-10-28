@@ -6,6 +6,7 @@ import Button from '../../components/common/Button/Button';
 import diversiartImg from '/diversiart.png';
 import { loginUsuario } from '../../services/api';
 import { useState } from 'react';
+import Header from '../../components/common/Header/Header';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -30,49 +31,52 @@ const Login = () => {
   }
 
   return (
-    <StyleContainerLogin>
-      <div className="content">
-        <div>
-          <img
-            src={diversiartImg}
-            alt="Imagem com o nome DiversiArt"
-            className="imgDiversiArt"
-          />
+    <>
+      <Header />
+      <StyleContainerLogin>
+        <div className="content">
+          <div>
+            <img
+              src={diversiartImg}
+              alt="Imagem com o nome DiversiArt"
+              className="imgDiversiArt"
+            />
+          </div>
+          <form onSubmit={handleLogin}>
+            <h1>LOGIN</h1>
+
+            <Textfield
+              label="Email"
+              name="email"
+              placeholder="email@email.com"
+              type="email"
+              required
+              value={email}
+              onChange={(e) => setEmail(e)}
+            />
+
+            <Textfield
+              label="Senha"
+              name="senha"
+              placeholder="●●●●●●●"
+              type="password"
+              required
+              value={senha}
+              onChange={(e) => setSenha(e)}
+            />
+            {error && <p style={{ color: 'red' }}>Email ou senha invalidas</p>}
+            <p>
+              Ainda não tem conta?
+              <Link to="/cadastro" className="destaque">
+                Cadastre-se
+              </Link>
+            </p>
+
+            <Button texto={'Entrar'} width={'100%'} type="submit" />
+          </form>
         </div>
-        <form onSubmit={handleLogin}>
-          <h1>LOGIN</h1>
-
-          <Textfield
-            label="Email"
-            name="email"
-            placeholder="email@email.com"
-            type="email"
-            required
-            value={email}
-            onChange={(e) => setEmail(e)}
-          />
-
-          <Textfield
-            label="Senha"
-            name="senha"
-            placeholder="●●●●●●●"
-            type="password"
-            required
-            value={senha}
-            onChange={(e) => setSenha(e)}
-          />
-          {error && <p style={{ color: 'red' }}>Email ou senha invalidas</p>}
-          <p>
-            Ainda não tem conta?
-            <Link to="/cadastro" className="destaque">
-              Cadastre-se
-            </Link>
-          </p>
-
-          <Button texto={'Entrar'} width={'100%'} type="submit" />
-        </form>
-      </div>
-    </StyleContainerLogin>
+      </StyleContainerLogin>
+    </>
   );
 };
 
