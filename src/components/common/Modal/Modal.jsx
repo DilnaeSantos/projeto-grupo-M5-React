@@ -15,7 +15,7 @@ const Modal = ({ open, title, onClose, children }) => {
               <h2>{title}</h2>
               <X color={'black'} onClick={onClose} cursor="pointer" size={32} />
             </section>
-            {children}
+            <SectionChildren>{children}</SectionChildren>
           </StylesContentModal>
         </StylesModal>
       )}
@@ -40,12 +40,10 @@ const StylesModal = styled.div`
 
 const StylesContentModal = styled.div`
   display: flex;
-  width: 401px;
   padding: 24px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* gap: 18px; */
   flex-shrink: 0;
   border-radius: 16px;
   background: #d7c0ab;
@@ -61,13 +59,33 @@ const StylesContentModal = styled.div`
       color: black;
     }
   }
+`;
 
-  > label {
-    padding: 5px;
-    margin-top: 10px;
-  }
+const SectionChildren = styled.div`
+  display: flex;
+  padding: 5px;
+  gap: 20px;
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    > img {
+      align-self: center;
+      width: 100px;
+      height: 100px;
+      margin-top: 25px;
+      border-radius: 8px;
+      background-color: #595959;
+    }
 
-  > Button {
-    margin-top: 15px;
+    > label {
+      padding: 5px;
+      margin-top: 10px;
+    }
+
+    > Button {
+      width: 100%;
+      margin-top: 30px;
+    }
   }
 `;
