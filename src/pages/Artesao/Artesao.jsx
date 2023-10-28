@@ -11,6 +11,7 @@ import {
   patchProduto,
   postProduto,
 } from '../../services/api';
+import Notificacao from '../../components/common/Notificacao/Notificacao';
 
 const Artesao = () => {
   const [abrirModal, setAbrirModal] = useState(false);
@@ -24,6 +25,13 @@ const Artesao = () => {
   const [emailArtesao, setEmailArtesao] = useState('');
   const [descricaoProduto, setDescricaoProduto] = useState('');
   const [idProduto, setIdProduto] = useState('');
+
+  const [infosNotificacao, setInfosNotificacao] = useState({
+    tipo: '',
+    texto: '',
+  });
+
+  const [abrirNotificacao, setAbrirNotificacao] = useState(false);
 
   function limparCampos() {
     setImagemProduto('');
@@ -59,11 +67,20 @@ const Artesao = () => {
       descricao: descricaoProduto,
     };
 
-    const response = await postProduto(body);
+    const resposta = await postProduto(body);
+    if (resposta.Sucesso) {
+      buscarProdutos();
+    }
+    setInfosNotificacao({
+      tipo: resposta.Sucesso ? 'Sucesso' : 'falha',
+      texto: resposta.Sucesso
+        ? 'Produto adicionada com sucesso'
+        : 'Erro ao adicionar Produto',
+    });
 
+    setAbrirNotificacao(true);
     setAbrirModal(false);
     limparCampos();
-    buscarProdutos();
   }
 
   async function handlePatchProduto() {
@@ -77,14 +94,34 @@ const Artesao = () => {
       descricao: descricaoProduto,
     };
     const resposta = await patchProduto(idProduto, body);
+    if (resposta.message) {
+      buscarProdutos();
+    }
+    setInfosNotificacao({
+      tipo: resposta.message ? 'Sucesso' : 'falha',
+      texto: resposta.message
+        ? 'Produto editado com sucesso'
+        : 'Erro ao editar Produto',
+    });
 
+    setAbrirNotificacao(true);
     setAbrirModal(false);
     setEEdicao(false);
-    buscarProdutos();
   }
 
   async function handleDeleteProduto() {
     const resposta = await deletarProduto(idProduto);
+    if (resposta.message) {
+      buscarProdutos();
+    }
+    setInfosNotificacao({
+      tipo: resposta.message ? 'Sucesso' : 'falha',
+      texto: resposta.message
+        ? 'Produto deletado com sucesso'
+        : 'Erro ao deletar Produto',
+    });
+
+    setAbrirNotificacao(true);
     buscarProdutos();
     setModalDelete(false);
   }
@@ -140,6 +177,14 @@ const Artesao = () => {
           })}
         </ul>
       </ProdutosCadastro>
+      {abrirNotificacao && (
+        <Notificacao
+          texto={infosNotificacao.texto}
+          tipo={infosNotificacao.tipo}
+          fecharNotificacao={() => setAbrirNotificacao(false)}
+          open={abrirNotificacao}
+        />
+      )}
       <Modal
         title={'Cadastrar:'}
         open={abrirModal}
