@@ -24,9 +24,9 @@ export const StyleInput = styled.input`
   border-radius: 8px;
   background: #f0f0f0;
   box-shadow: 5px 6px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 80%;
+  width: 100%;
   padding: 5px;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -38,9 +38,9 @@ export const StyleTextArea = styled.textarea`
   border-radius: 8px;
   background: #f0f0f0;
   box-shadow: 5px 6px 4px 0px rgba(0, 0, 0, 0.25);
-  width: 80%;
+  width: 100%;
   padding: 5px;
-  font-size: 24px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;

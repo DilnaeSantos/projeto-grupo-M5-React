@@ -32,6 +32,26 @@ const Artesao = () => {
   });
 
   const [abrirNotificacao, setAbrirNotificacao] = useState(false);
+  const [loading, setLoading] = useState(false);
+
+  const handleInputChange = (e) => {
+    const url = e.target.value;
+    setImagemProduto(url);
+    preloadImage(url);
+  };
+
+  const preloadImage = (url) => {
+    setLoading(true);
+    const img = new Image();
+    img.src = url;
+    img.onload = () => {
+      setLoading(false);
+    };
+    img.onerror = () => {
+      setLoading(false);
+      console.error('Erro ao carregar a imagem.');
+    };
+  };
 
   function limparCampos() {
     setImagemProduto('');
@@ -68,6 +88,7 @@ const Artesao = () => {
     };
 
     const resposta = await postProduto(body);
+    console.log(resposta);
     if (resposta.Sucesso) {
       buscarProdutos();
     }
@@ -193,49 +214,48 @@ const Artesao = () => {
           limparCampos();
         }}
       >
-        <label htmlFor="">Imagem-URL:</label>
-        <StyleInput
-          type="text"
-          value={imagemProduto}
-          onChange={(evento) => setImagemProduto(evento.target.value)}
-        />
-        <label htmlFor="">Nome:</label>
-        <StyleInput
-          type="text"
-          value={nomeProduto}
-          onChange={(evento) => setNomeProduto(evento.target.value)}
-        />
-        <label htmlFor="">Preço:</label>
-        <StyleInput
-          type="text"
-          value={precoProduto}
-          onChange={(evento) => setPrecoProduto(evento.target.value)}
-        />
-        <label htmlFor="">Quantidade em Estoque:</label>
-        <StyleInput
-          type="text"
-          value={qtdEstoque}
-          onChange={(evento) => setQtdEstoque(evento.target.value)}
-        />
-        {/* <label htmlFor="">Email Aretesão:</label>
-        <StyleInput
-          type="text"
-          value={emailArtesao}
-          onChange={(evento) => setEmailArtesao(evento.target.valueo)}
-        /> */}
-        <label htmlFor="">Descrição</label>
-        <StyleTextArea
-          name=""
-          id=""
-          cols="30"
-          rows="2"
-          value={descricaoProduto}
-          onChange={(evento) => setDescricaoProduto(evento.target.value)}
-        ></StyleTextArea>
-        <Button
-          onClick={eEdicao ? handlePatchProduto : handleSalvarProduto}
-          texto={eEdicao ? 'Salvar alterações' : 'ADICIONAR'}
-        />
+        <div>
+          <label htmlFor="">Nome:</label>
+          <StyleInput
+            type="text"
+            value={nomeProduto}
+            onChange={(evento) => setNomeProduto(evento.target.value)}
+          />
+          <label htmlFor="">Preço:</label>
+          <StyleInput
+            type="text"
+            value={precoProduto}
+            onChange={(evento) => setPrecoProduto(evento.target.value)}
+          />
+          <label htmlFor="">Quantidade em Estoque:</label>
+          <StyleInput
+            type="text"
+            value={qtdEstoque}
+            onChange={(evento) => setQtdEstoque(evento.target.value)}
+          />
+          <label htmlFor="">Descrição</label>
+          <StyleTextArea
+            name=""
+            id=""
+            cols="30"
+            rows="3"
+            value={descricaoProduto}
+            onChange={(evento) => setDescricaoProduto(evento.target.value)}
+          ></StyleTextArea>
+        </div>
+        <div>
+          <img src={imagemProduto} alt="" />
+          <label htmlFor="">Imagem-URL:</label>
+          <StyleInput
+            type="text"
+            value={imagemProduto}
+            onChange={handleInputChange}
+          />
+          <Button
+            onClick={eEdicao ? handlePatchProduto : handleSalvarProduto}
+            texto={eEdicao ? 'Salvar alterações' : 'ADICIONAR'}
+          />
+        </div>
       </Modal>
 
       {/* MODAL - EXCLUIR A TRANSACAO */}
