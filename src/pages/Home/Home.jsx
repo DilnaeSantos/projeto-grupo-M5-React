@@ -5,7 +5,7 @@ import styles from "../Home/home.styles.js";
 import fotoHome from "/foto-home-1.svg";
 import fotoHome2 from "/foto-home-2.svg";
 import fotoHome3 from "/foto-home-3.svg";
-
+import Footer from "../../components/common/Footer/Footer";
 const Home = () => {
   return (
     <div className="home">
@@ -63,6 +63,7 @@ const Home = () => {
           </p>
         </div>
       </main>
+      <Footer />
     </div>
   );
 };
