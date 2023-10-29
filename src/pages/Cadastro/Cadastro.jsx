@@ -7,7 +7,8 @@ import { StyleContainerCadastro } from './cadastro.styles';
 import { postartesaos } from '../../services/api';
 import { useState } from "react";
 import Header from '../../components/common/Header/Header';
-//import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
+
 
 const Cadastro = () => {
 
@@ -18,9 +19,9 @@ const Cadastro = () => {
   const [bio, setbio] = useState('')
   const [senha, setSenha] = useState('')
   const [errorCadastro, setErrorCadastro] = useState('')
+  //const [resposta, setResposta] = useState('')
+  const navigate = useNavigate()
 
-
-  //const navigate = useNavigate()
 
   const handleCadastro = async (e) => {
     e.preventDefault();
@@ -35,7 +36,13 @@ const Cadastro = () => {
     };
 
     try {
-      await postartesaos(body, senha);
+    const status =  await postartesaos(body, senha);
+
+      if (status === 201) {
+        navigate('/login');
+      }
+
+      //console.log(status);
 
     } catch (erro) {
         if (erro.response) {

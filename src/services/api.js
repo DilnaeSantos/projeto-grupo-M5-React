@@ -20,7 +20,7 @@ export const postartesaos = async (body, senha) => {
     },
   };
   const resposta = await api.post('/artesaos', body, config);
-  return resposta.data;
+  return resposta.status;
 };
 
 export const loginUsuario = async (email, senha) => {
