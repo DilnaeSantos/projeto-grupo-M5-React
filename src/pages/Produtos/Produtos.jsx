@@ -3,6 +3,7 @@ import Header from '../../components/common/Header/Header';
 import { getProdutosArtesao } from '../../services/api';
 import { StyleConatiner, StyledSection } from './produtos.styles';
 import Produto from '../../components/Produto/Produto';
+import Footer from '../../components/common/Footer/Footer';
 
 const Produtos = () => {
   const [produtos, setProdutos] = useState([]);
@@ -36,7 +37,9 @@ const Produtos = () => {
           </ul>
         </StyleConatiner>
       </StyledSection>
+      <Footer />
     </>
+    
   );
 };
 

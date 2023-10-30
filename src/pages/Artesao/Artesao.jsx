@@ -12,6 +12,7 @@ import {
   postProduto,
 } from '../../services/api';
 import Notificacao from '../../components/common/Notificacao/Notificacao';
+import Footer from '../../components/common/Footer/Footer';
 
 const Artesao = () => {
   const [abrirModal, setAbrirModal] = useState(false);
@@ -268,6 +269,7 @@ const Artesao = () => {
         <h3>Você deseja realmente excluir esse produto?</h3>
         <Button texto={'sim'} onClick={handleDeleteProduto} />
       </Modal>
+      <Footer />
     </>
   );
 };
