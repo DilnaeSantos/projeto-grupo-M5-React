@@ -7,6 +7,7 @@ import diversiartImg from '/diversiart.png';
 import { loginUsuario } from '../../services/api';
 import { useState } from 'react';
 import Header from '../../components/common/Header/Header';
+import Footer from '../../components/common/Footer/Footer';
 const Login = () => {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
@@ -76,6 +77,7 @@ const Login = () => {
           </form>
         </div>
       </StyleContainerLogin>
+      <Footer />
     </>
   );
 };

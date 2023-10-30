@@ -1,0 +1,30 @@
+
+.footer {
+    background-color: #888600; /* Cor de fundo */
+    color: #c4ab9a; 
+    padding: 20px; 
+    margin-top: 15%;
+    text-align: center; 
+    width: 100%; 
+    bottom: 0; 
+}
+
+/* Estilizando links no footer */
+.footer a {
+    color: #dcd2cb; 
+    text-decoration: none; 
+    margin: 0 15px; 
+}
+
+/* Estilo quando o mouse passa por cima dos links */
+.footer a:hover {
+    text-decoration: underline; 
+}
+
+.rodape {
+font-size: 18px;
+}
+/* 
+.linkfooter {
+font-size: 20px;
+} */

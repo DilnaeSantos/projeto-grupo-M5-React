@@ -8,6 +8,7 @@ import { postartesaos } from '../../services/api';
 import { useState } from "react";
 import Header from '../../components/common/Header/Header';
 import { useNavigate } from 'react-router-dom';
+import Footer from '../../components/common/Footer/Footer';
 
 
 const Cadastro = () => {
@@ -140,6 +141,7 @@ const Cadastro = () => {
         </div>
     </form>
     </StyleContainerCadastro>
+    <Footer/>
 </div>
   )
 }

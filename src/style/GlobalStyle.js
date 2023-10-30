@@ -32,11 +32,11 @@ input {
 }
 h1{
   font-family: 'Glass Antiqua';
-  color: #64531f;
+  color: #888600;
   margin: auto;
 }
 h2{
-  color:#8a4546;
+  color: #FFFFFF;
   font-family: 'Montserrat';
   font-size: 38px;
   font-style: normal;
@@ -53,8 +53,9 @@ h3{
 }
 
 p{
+  color:#8a4546;
   font-family: 'Roboto';
-  font-size: 24px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 300;
   line-height: normal;

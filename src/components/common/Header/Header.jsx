@@ -33,13 +33,13 @@ const HeaderContainer = styled.header`
   
   a {
     text-decoration: none;
-    color: white;
+    color: #D9D9D9;
     margin-right: 40px;
     font-size: 20px;
     transition: color 0.3s;
 
     &:hover{
-      color: #c4ab9a;
+      color: #888600;
       transform: scale(1.1);
     
     }

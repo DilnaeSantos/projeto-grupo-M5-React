@@ -1,3 +1,5 @@
+import styled from "styled-components";
+
 // Em HomeStyles.js
 const styles = {
   container: {
@@ -42,8 +44,12 @@ const styles = {
   tituloHome: {
     marginLeft: "42%",
     fontSize: "300%",
-    marginTop: "2%",
+    marginTop: "3%",
+  },
+  phome: {
+    fontstyle: "strong",
   },
 };
+
 
 export default styles;

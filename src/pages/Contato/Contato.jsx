@@ -3,6 +3,7 @@ import Textfield from '../../components/common/Texfield/Textfield';
 import Button from '../../components/common/Button/Button';
 import { StyleContainerContato } from './contato.styles';
 import Header from '../../components/common/Header/Header';
+import Footer from '../../components/common/Footer/Footer';
 
 const Contato = () => { 
     return (
@@ -48,6 +49,7 @@ const Contato = () => {
         </form>
     </div>
     </StyleContainerContato>
+    <Footer/>
     </div>
 )
 }
