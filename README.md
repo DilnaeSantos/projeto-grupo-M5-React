@@ -53,7 +53,7 @@ Siga as etapas abaixo para iniciar o projeto:
 
 A aplicação foi feita pelo Squad 3 da Turma 2 do programa Códigos do Amanhã, parceria da Resilia com o Ebanx. Os integrantes são:
 
--Yohan Barbosa;
+- Yohan Barbosa;
 - Dilnae Santos;
 - Caroline Silva;
 - Pan Gonçalves;
